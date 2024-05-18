@@ -1,0 +1,9 @@
+streamlit
+pandas
+numpy
+xgboost
+joblib
+geohash2
+plotly
+folium
+streamlit-folium
