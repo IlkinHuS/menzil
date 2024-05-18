@@ -7,11 +7,12 @@ import geohash2 as gh2
 import plotly.graph_objects as go
 import folium
 from streamlit_folium import st_folium
+import os
 
 # Load the trained model
-binamodel = joblib.load('C:/Users/ssg-user/streamlit/binaaz1500.pkl')
+binamodel = joblib.load(os.path.join(os.path.dirname(__file__), 'binaaz1500.pkl'))
 
-data_structure = pd.read_csv('C:/Users/ssg-user/streamlit/data_format2.csv')
+data_structure = pd.read_csv(os.path.join(os.path.dirname(__file__), 'data_format2.csv'))
 
 # Function to preprocess input data
 def preprocess_input(data):
@@ -117,7 +118,7 @@ def main():
     if choices == 'Visual':
         st.title('Interactive Map')
         # Load and display the HTML file containing the figure
-        st.components.v1.html(open('C:/Users/ssg-user/streamlit/hyperlink_fig34.html').read(), width=800, height=600)
+        st.components.v1.html(open(os.path.join(os.path.dirname(__file__), 'hyperlink_fig34.html')).read(), width=800, height=600)
 
 if __name__ == "__main__":
     main()
